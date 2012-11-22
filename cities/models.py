@@ -144,6 +144,7 @@ for type in [Country, Region, Subregion, City, District]:
 class PostalCode(Place):
     code = models.CharField(max_length=20)
     location = models.PointField()
+    shape = models.PolygonField(null= True, blank= True)
 
     country = models.ForeignKey(Country, related_name = 'postal_codes')
 
